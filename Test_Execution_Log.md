@@ -3,7 +3,7 @@
 **Tester:** S Vinyas Gangadkar (Test Engineer)  
 **Review date:** 29 October 2026  
 **Source documents:** `Test_Engineer_Pack.md`, `Test_Data_Set_.md`  
-**Current execution state:** Execution has not started because a runnable application build/setup was not found on the repository's `main` branch during the repository check on 29 October 2026. `main` showed only `README.md` and `.gitignore`. This is a repository-only finding; if the team has shared a separate app link/build, update this log and test against that environment.
+**Current execution state:** Test execution has not started because a runnable application build was not identified in the repository's main branch or the local Downloads folder checked on 29 October 2026. The main branch contained only README.md and .gitignore. The reviewed SE Miniproject.zip contained chat exports, not application source code. A separately hosted or shared application may still exist, but none has been located so far.
 
 > **Integrity note:** No test has been marked Pass or Fail because none has been executed. The status below is **Blocked — build/environment not identified in the repository**, not a claim that the application failed. Change a case to Not Run, Pass, Fail, or Blocked as appropriate once the actual environment is known and execution starts.
 
