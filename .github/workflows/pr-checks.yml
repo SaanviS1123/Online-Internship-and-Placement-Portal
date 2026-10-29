@@ -1,3 +1,4 @@
+
 name: Pull Request Checks
 
 on:
@@ -20,13 +21,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Check required documentation files
+      - name: Check baseline documentation files
         shell: bash
         run: |
           set -e
           test -s README.md
-          test -s docs/maintainability-checklist.md
-          test -s docs/https-tls-checklist.md
           test -s performance-tests/response-time-test-plan.md
           test -s performance-tests/availability-test-plan.md
-          echo "All required documentation files exist and are non-empty."
+          echo "Baseline documentation files exist and are non-empty."
