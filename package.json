@@ -1,0 +1,16 @@
+{
+  "name": "online-internship-and-placement-portal",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "npm start --prefix backend",
+    "neon": "neon"
+  },
+  "devDependencies": {
+    "neon": "^8.13.1"
+  },
+  "dependencies": {
+    "@neon/config": "^1.9.5",
+    "@neon/env": "^1.6.6"
+  }
+}
