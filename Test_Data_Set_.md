@@ -1,7 +1,7 @@
 # Test Data Set — Online Internship & Placement Preparation Portal
 
-**Owner:** Vinyas — Test Engineer  
-**Purpose:** Reusable synthetic data for manual QA after a runnable test build and test environment are available.  
+**Owner:** Vinyas — Test Engineer\
+**Purpose:** Reusable synthetic data for manual QA. Use only with available features and an approved test environment; database-backed cases require a configured PostgreSQL test connection.\
 **Data classification:** Fictional test data only. Do not replace these entries with real student information or production credentials.
 
 ## 1. Test accounts
@@ -40,8 +40,8 @@ The fixture statuses are examples. Use only status values supported by the imple
 
 ## 4. Aptitude test fixture
 
-**Test ID:** APT-01  
-**Suggested duration:** 5 minutes, if the application allows test configuration  
+**Test ID:** APT-01\
+**Suggested duration:** 5 minutes, if the application allows test configuration\
 **Scoring:** 1 point per correct response, no negative marks for this fixture
 
 | Question ID | Question | Options | Expected answer |
@@ -83,7 +83,7 @@ Use benign, controlled strings only in injection-validation tests; run them only
 
 | Date | Build/commit | Test case ID | Actual result and evidence | Status | Defect link |
 |---|---|---|---|---|---|
-| — | — | — | Awaiting a runnable build and approved test environment | Not Run | — |
+| — | — | — | Template row — record actual outcomes in `Test_Execution_Log.md` | Not Run | — |
 
 For each attempted test, record an observed result. Use **Blocked** when a specific test cannot be executed because a required build, environment, account, or dependency is unavailable; state the reason. Keep unattempted tests **Not Run**. Never infer Pass/Fail from expected behavior alone.
 
@@ -95,3 +95,8 @@ For each attempted test, record an observed result. Use **Blocked** when a speci
 - [ ] Test records can be reset or recreated for repeatable runs.
 - [ ] Authorization tests inspect server/API responses, not only UI visibility.
 - [ ] Evidence links and screenshots contain no secrets or personal information.
+
+
+## 9. Current database implementation note
+
+The current main backend source uses PostgreSQL (`pg`, `DATABASE_URL`, `backend/src/db.js`, and `backend/src/schema.sql`). Keep the synthetic fixtures in this file database-neutral. The merged `backend/src/seed.js` currently provisions one student and two recruiter demo accounts plus sample internship listings; it does not provision a second student or an admin account, so create additional role fixtures only through the team-approved test-data process. Run schema/seed setup only after the team provides an approved PostgreSQL test database. The SRS currently mentions MongoDB, so the technology baseline requires formal team alignment. No DB-backed test is marked complete merely because the API server starts.
