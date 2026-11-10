@@ -1,3 +1,4 @@
+
 :root {
   color: #111111;
   background: #f3f3f3;
@@ -228,6 +229,129 @@ button:disabled {
   margin: 10vh auto;
 }
 
+/* F-005: Student profile */
+
+.profile-page {
+  display: grid;
+  gap: 20px;
+}
+
+.profile-header {
+  margin-bottom: 4px;
+}
+
+.profile-header h1 {
+  margin-bottom: 6px;
+}
+
+.profile-section {
+  display: grid;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #d4d4d4;
+  padding: 22px;
+}
+
+.profile-section h2 {
+  margin: 0;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.profile-detail {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.profile-detail strong {
+  font-weight: 600;
+}
+
+.profile-record {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #dedede;
+  background: #fafafa;
+}
+
+.profile-record h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.profile-record p {
+  margin: 0;
+}
+
+.profile-form {
+  display: grid;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #dedede;
+}
+
+.profile-form h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.profile-year-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.profile-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-checkbox input {
+  width: auto;
+}
+
+.profile-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid #bdbdbd;
+  background: #f3f3f3;
+}
+
+.profile-skill button {
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+.profile-resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.profile-muted {
+  color: #5a5a5a;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 860px) {
   .filters {
     grid-template-columns: 1fr;
@@ -237,5 +361,16 @@ button:disabled {
   .listing header,
   .row {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-section {
+    padding: 16px;
+  }
+
+  .profile-details,
+  .profile-year-grid {
+    grid-template-columns: 1fr;
   }
 }
