@@ -9,6 +9,7 @@ import ManageListings from "./pages/ManageListings";
 import MyApplications from "./pages/MyApplications";
 import ReviewApplications from "./pages/ReviewApplications";
 import AdminConsole from "./pages/AdminConsole";
+import Signup from "./pages/Signup";
 import {
   AptitudeTests,
   AssessmentAttempt,
@@ -39,6 +40,7 @@ export default function App() {
     <Layout>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route
           path="/internships"
           element={<RequireAuth><Internships /></RequireAuth>}

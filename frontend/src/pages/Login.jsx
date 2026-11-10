@@ -1,5 +1,6 @@
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { api } from "../api";
 import { useSession } from "../session";
 
@@ -21,6 +22,7 @@ export default function Login() {
         method: "POST",
         body: { email, password },
       });
+
       signIn({ token: result.token, user: result.user });
       navigate("/internships");
     } catch (requestError) {
@@ -38,7 +40,9 @@ export default function Login() {
           Students browse and apply. Recruiters manage listings and application status.
         </p>
       </div>
+
       {error && <div className="banner error">{error}</div>}
+
       <label>
         Email
         <input
@@ -49,6 +53,7 @@ export default function Login() {
           required
         />
       </label>
+
       <label>
         Password
         <input
@@ -59,9 +64,14 @@ export default function Login() {
           required
         />
       </label>
+
       <button type="submit" disabled={pending}>
         {pending ? "Signing in…" : "Sign in"}
       </button>
+
+      <p>
+        Don't have an account? <Link to="/signup">Sign up</Link>
+      </p>
     </form>
   );
 }
