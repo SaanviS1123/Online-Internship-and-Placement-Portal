@@ -1,64 +1,88 @@
+
 # NF-005: Maintainability Checklist
 
-## Requirement
+## 1. Requirement
 
-Keep the Online Internship and Placement Preparation Portal codebase organized and documented so the team can maintain, debug, and extend the portal efficiently.
+Keep the Online Internship and Placement Preparation Portal organized, documented, and structured so that the development team can maintain, debug, and extend the application efficiently.
 
-## 1. Logical Code Organization
+## 2. Current Project Structure
+
+The current repository contains:
+
+- React 19 and Vite frontend.
+- Node.js and Express backend.
+- PostgreSQL database integration using the `pg` driver.
+- Backend authentication and API-related modules.
+- Frontend pages and components for portal workflows.
+- GitHub Actions workflow configuration.
+- Project setup and development documentation.
+
+The current structure reflects the project's progression from its initial repository and planning stage.
+
+## 3. Logical Code Organization
 
 - [ ] Frontend code is organized into logical modules and components.
-- [ ] Backend code is organized into logical modules, routes, and services as appropriate.
+- [ ] Backend code is organized into appropriate routes, middleware, and services.
 - [ ] Module responsibilities and naming conventions are consistent.
 - [ ] Unnecessary code duplication is minimized.
+- [ ] Related functionality is grouped logically.
+- [ ] Error handling is consistent across application modules.
 
-**Status:** Backend implementation is available, including authentication and student-profile APIs. Frontend and full code-organization review remain pending.
+**Status:** Frontend and backend implementations are present. A complete maintainability review is still required.
 
-## 2. README Setup and Execution Instructions
+## 4. README and Setup Documentation
 
-- [ ] Document the project prerequisites.
+- [ ] Document project prerequisites.
 - [ ] Document installation and dependency setup.
 - [ ] Document application configuration.
-- [ ] Document how to start the frontend and backend.
-- [ ] Document how to run available tests.
-- [ ] Keep instructions updated as the project changes.
+- [ ] Document how to start the frontend.
+- [ ] Document how to start the backend.
+- [ ] Document database setup requirements.
+- [ ] Document available test commands.
+- [ ] Keep setup instructions updated as the project changes.
 
-**Status:** Existing README and setup instructions require review.
+**Status:** A README and local setup instructions are present. Their accuracy should be reviewed against the current development environment.
 
-## 3. Configuration and Secrets
+## 5. Configuration and Secrets
 
-- [ ] Use environment variables for environment-specific configuration where appropriate.
-- [ ] Provide an example environment file containing placeholders only.
-- [ ] Ensure real credentials, tokens, and secrets are not committed to Git.
+- [ ] Use environment variables for environment-specific configuration.
+- [ ] Provide example environment files containing placeholders only.
+- [ ] Ensure real credentials, tokens, and secrets are not committed.
 - [ ] Document required environment variables without exposing their values.
 - [ ] Ensure `.gitignore` excludes local environment files containing secrets.
+- [ ] Review configuration before deployment.
 
-**Status:** Configuration review is pending. Verify environment-variable usage, placeholder-only example files, Git ignore rules, and ensure no real credentials or secrets are tracked in Git.
+**Status:** The repository documents environment-variable configuration and local environment files. A complete secrets and configuration review is still required.
 
-## 4. API and Setup Documentation
+## 6. API and Database Documentation
 
-- [ ] Document important API endpoints, HTTP methods, and expected behavior.
-- [ ] Document request parameters and response formats where applicable.
+- [ ] Document important API endpoints and HTTP methods.
+- [ ] Document request parameters and response formats.
 - [ ] Document authentication requirements for protected endpoints.
-- [ ] Document setup requirements and external service dependencies.
-- [ ] Update documentation when APIs or configuration requirements change.
+- [ ] Document database setup requirements.
+- [ ] Document important database tables and relationships.
+- [ ] Update documentation when APIs or database structures change.
 
-**Status:** Authentication and student-profile APIs are implemented. API endpoint documentation, request/response details, and remaining API documentation require review.
+**Status:** Backend APIs and PostgreSQL database files are present. Complete API and database documentation should be reviewed.
 
-## 5. Review Process
+## 7. Review and Maintenance Process
 
-- [ ] Review the repository against this checklist.
-- [ ] Record missing documentation and organizational issues.
-- [ ] Create follow-up tasks for items requiring implementation.
-- [ ] Revisit this checklist as the application develops.
+- [ ] Review code changes through pull requests.
+- [ ] Record maintainability issues identified during reviews.
+- [ ] Create follow-up tasks for unresolved issues.
+- [ ] Keep project documentation synchronized with implementation changes.
+- [ ] Revisit this checklist during future development.
 
-## Current Status
+**Status:** A development and pull-request workflow is documented. Continued review is required as the project evolves.
 
-The maintainability checklist has been drafted.
+## 8. Current Status
 
-Backend authentication and student-profile APIs have been implemented
-and merged. Full verification of frontend and backend code organization,
-README instructions, configuration and secrets handling, and API
-documentation remains in progress.
+The maintainability requirements and review checklist have been documented.
 
-Checklist items must only be marked complete after verification.
-Outstanding findings should be recorded and tracked separately.
+The repository now contains frontend, backend, database, and project documentation components. However, the presence of these components does not mean every maintainability criterion has been verified.
+
+A complete review of code organization, configuration, secrets handling, API documentation, and setup instructions remains necessary.
+
+**Verification status:** Partially reviewed; full verification pending.
+
+Checklist items must only be marked complete after they have been checked against the actual repository.
