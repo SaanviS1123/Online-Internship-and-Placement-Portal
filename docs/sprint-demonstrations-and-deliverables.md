@@ -1,68 +1,104 @@
+
 # PM-002: Sprint Demonstrations and Documentation
 
 ## 1. Purpose
 
-This document tracks sprint demonstrations, implementation progress, deviations from planned requirements or design, and final project submission deliverables for the Online Internship and Placement Preparation Portal.
+This document tracks sprint demonstrations, project implementation progress, deviations from planned requirements or design, and final project submission deliverables for the Online Internship and Placement Preparation Portal.
+
+It provides a record of project progress and helps the team prepare for sprint reviews and final submission.
 
 ## 2. Sprint Demonstrations
 
 ### Sprint 1 Demonstration
 
 - **Required duration:** 1 minute
-- **Status:** Pending recording and verification
+- **Status:** Demonstration evidence to be confirmed
 - **Demonstration video link:** To be added
-- **Functionality demonstrated:** To be updated after implementation
-- **Notes:** Record and review the demonstration after Sprint 1.
+- **Functionality demonstrated:** To be confirmed from the recorded demonstration
+- **Notes:** Include the main functionality shown during the Sprint 1 review.
 
 ### Sprint 2 Demonstration
 
 - **Required duration:** 2 minutes
-- **Status:** Pending recording and verification
+- **Status:** Demonstration evidence to be confirmed
 - **Demonstration video link:** To be added
-- **Functionality demonstrated:** To be updated after implementation
-- **Notes:** Record and review the demonstration after Sprint 2.
+- **Functionality demonstrated:** To be confirmed from the recorded demonstration
+- **Notes:** Include the main functionality shown during the Sprint 2 review.
 
-## 3. Implementation Status
+## 3. Current Project Implementation
 
-Update this section as project functionality is implemented and verified.
+The current repository contains a frontend, backend, database integration, project documentation, and supporting project evidence.
 
-| Area | Status | Evidence or Notes |
+| Area | Current Repository Status | Evidence / Notes |
 |---|---|---|
-| Frontend implementation | Pending verification | Update after reviewing the implemented application |
-| Backend implementation | Pending verification | Update after reviewing the implemented application |
-| Database integration | Pending verification | Confirm the final database choice and integration |
-| Testing | Pending verification | Record completed tests and results |
-| Documentation | In progress | Track project documentation updates here |
+| Frontend | React 19 with Vite implementation present | Frontend source files |
+| Backend | Node.js and Express implementation present | Backend source files |
+| Database | PostgreSQL integration present | `pg` driver, database configuration and schema |
+| Authentication | Authentication and role-related functionality present | Backend and frontend implementation |
+| Student profile | Profile-related functionality present | Frontend and backend modules |
+| Internship management | Internship and application workflows present | Frontend and backend modules |
+| Aptitude and preparation | Related modules and project evidence present | Current source and team documentation |
+| Administration | Administration-related modules and project evidence present | Current source and team documentation |
+| Automated workflow | GitHub Actions workflow present | `.github/workflows/pr-checks.yml` |
+| Performance verification | Measurement evidence not established here | Performance test plans |
+| Availability verification | Measurement evidence not established here | Availability test plan |
+| Concurrent-user verification | 500-user load-test evidence not established here | Concurrent-user test plan |
+| HTTPS/TLS verification | Deployment verification pending | HTTPS/TLS checklist |
 
-## 4. Deviations from Plan
+This table describes repository contents and documentation status. It should not be interpreted as proof that every feature or non-functional requirement has passed formal testing.
 
-Record any changes from the approved requirements, architecture, sprint plan, or intended design.
+## 4. Testing and Quality Evidence
 
-| Planned requirement or design | Deviation | Reason | Impact | Resolution or Follow-up |
+The repository contains separate team testing and quality-assurance documentation.
+
+Examples include:
+
+- QA test report and bug report.
+- Sprint 1 test cases and execution evidence.
+- Test execution log and summary.
+- Screenshots supporting team testing activities.
+
+These documents should be referenced as team project evidence.
+
+Individual contributions to testing must be attributed to the actual contributors and should not be assumed from the presence of the files in the repository.
+
+## 5. Deviations from Plan
+
+Record changes from the approved requirements, architecture, sprint plan, or intended design.
+
+| Planned Requirement or Design | Deviation | Reason | Impact | Resolution or Follow-up |
 |---|---|---|---|---|
-| To be reviewed | None documented yet | Pending team review | Not assessed | Update during sprint reviews |
+| SRS v1.0 describes MongoDB/MERN | Current backend implementation uses PostgreSQL | Implementation differs from the original SRS technology description | Requirements and implementation baseline need alignment | Obtain team approval and update the SRS if PostgreSQL is accepted |
 
-No deviations should be considered confirmed until the team has reviewed the implementation against the plan.
+Other deviations should be added after review by the project team.
 
-## 5. Final Deliverables Checklist
+## 6. Final Deliverables Checklist
 
-- [ ] Review the completed application functionality.
-- [ ] Update the README with setup and execution instructions.
+- [ ] Review completed application functionality.
+- [ ] Update README setup and execution instructions.
 - [ ] Review project requirements and design documentation.
-- [ ] Record and link the Sprint 1 demonstration video.
-- [ ] Record and link the Sprint 2 demonstration video.
+- [ ] Confirm Sprint 1 demonstration video and link.
+- [ ] Confirm Sprint 2 demonstration video and link.
 - [ ] Document deviations and their resolutions.
-- [ ] Review testing evidence and known limitations.
-- [ ] Verify repository contents and pull requests.
+- [ ] Review team testing evidence and known limitations.
+- [ ] Review performance and availability verification status.
+- [ ] Verify HTTPS/TLS deployment status.
+- [ ] Review repository contents and merged pull requests.
 - [ ] Confirm final submission requirements and deadline with the team.
 
-## 6. Final Review
+## 7. Final Review
 
-Before submission, the team should review the implementation status, demonstration videos, documentation, deviations, and required deliverables.
+Before submission, the team should review implementation progress, demonstration evidence, documentation, deviations, testing results, and outstanding deliverables.
 
-- **Review status:** Pending
+- **Review status:** Pending final team review
 - **Review date:** To be added
 - **Outstanding items:** To be updated
 - **Final submission confirmation:** Pending
 
-This document should be updated as work is completed. Pending items must not be marked complete without evidence.
+## 8. Current Status
+
+The sprint demonstration and deliverables tracking document has been updated to reflect the current repository structure and project progress.
+
+The repository contains substantially more implementation and supporting documentation than it did during the initial planning stage.
+
+Demonstration links, final review details, and outstanding verification evidence must be added or confirmed by the team before final submission.
