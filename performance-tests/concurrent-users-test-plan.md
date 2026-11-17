@@ -1,48 +1,78 @@
+
 # NF-004: Concurrent Users Test Plan
 
-## Requirement
+## 1. Requirement
 
-The Online Internship and Placement Preparation Portal must be load-tested against a target of 500 concurrent users without unacceptable performance degradation.
+The Online Internship and Placement Preparation Portal must be evaluated against a target of 500 concurrent users without unacceptable performance degradation.
 
-## Test Objectives
+## 2. Current Application Status
+
+The project now contains a React frontend, Node.js and Express backend, and PostgreSQL database integration.
+
+The application has progressed beyond the initial implementation stage. A load test is still required to establish how the application behaves when multiple users access it simultaneously.
+
+The presence of implemented features does not establish that the application can currently support 500 concurrent users.
+
+## 3. Test Objectives
 
 - Evaluate application behavior under a load of up to 500 concurrent users.
-- Record response times and errors during the test.
-- Identify and document performance bottlenecks.
-- Report test results, observations, and limitations.
+- Observe response times under increasing user loads.
+- Record failed requests and HTTP errors.
+- Monitor application and database behavior.
+- Identify performance bottlenecks.
+- Document test results and limitations.
 
-## Test Approach
+## 4. Test Approach
 
-Once the application is implemented:
+1. Identify important user-facing workflows and API endpoints.
+2. Configure a suitable test environment.
+3. Define the simulated user workload and test duration.
+4. Begin with a small number of concurrent users.
+5. Increase the simulated load gradually.
+6. Continue testing up to the target of 500 concurrent users.
+7. Record response times, throughput, errors, and resource usage.
+8. Identify bottlenecks and unexpected application behavior.
+9. Prepare a summary of the test results.
 
-1. Identify the user-facing endpoints and workflows to test.
-2. Define the test environment, workload, and test duration.
-3. Increase the simulated user load gradually up to 500 concurrent users.
-4. Record response times, HTTP status codes, failed requests, and throughput.
-5. Observe application resource usage and relevant service logs.
-6. Document bottlenecks, failures, and any unexpected behavior.
-7. Summarize results and compare them with the agreed acceptance criteria.
-
-## Measurements to Record
+## 5. Measurements to Record
 
 - Number of simulated concurrent users
-- Test duration and workload profile
+- Test duration
+- Workload profile
 - Endpoint and HTTP method
-- Average and maximum response times
-- Failed requests, error rates, and HTTP status codes
+- Average response time
+- Maximum response time
+- Failed requests and error rate
+- HTTP status codes
 - Requests processed per second, where available
-- Relevant CPU, memory, and database observations
-- Identified bottlenecks and test limitations
+- CPU and memory observations
+- Database performance observations
+- Identified bottlenecks and limitations
 
-## Acceptance Criteria
+## 6. Acceptance Criteria
 
-- The system is load-tested against a target of 500 concurrent users.
-- Response times and errors are recorded during testing.
-- Identified bottlenecks are documented.
-- Test results and any limitations are reported.
+- The application is evaluated against the target of 500 concurrent users.
+- Response times and failed requests are recorded.
+- Application behavior under increasing load is documented.
+- Performance bottlenecks are identified.
+- Test results and limitations are reported.
 
-Any additional response-time or error-rate thresholds must be agreed upon by the project team before testing.
+Additional response-time and error-rate thresholds must be agreed upon by the project team before testing.
 
-## Status
+## 7. Test Results
 
-Test plan drafted. Load testing and performance measurements are pending application implementation and availability of a test environment.
+| Concurrent Users | Duration | Average Response Time | Error Rate | Result |
+|---:|---|---|---|---|
+| To be recorded | - | - | - | Pending |
+
+No results should be entered until load testing has actually been performed.
+
+## 8. Current Status
+
+The concurrent-user requirement and test plan have been documented.
+
+The application implementation is now available in the repository. However, a load test demonstrating support for 500 concurrent users has not been established by this document.
+
+**Verification status:** Pending load testing.
+
+**Target:** 500 concurrent users.
