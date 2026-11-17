@@ -1,50 +1,78 @@
+
 # NF-002: Availability Test Plan
 
-## Requirement
+## 1. Requirement
 
-The Online Internship and Placement Preparation Portal must achieve at least 99% availability over an agreed measurement period, as specified in NF-002.
+The Online Internship and Placement Preparation Portal must achieve at least 99% availability over an agreed measurement period.
 
-## Availability Measurement
+## 2. Current Application Status
 
-Availability will be evaluated over a measurement period agreed upon by the project team.
+The project contains a React frontend, a Node.js and Express backend, and PostgreSQL database integration.
 
-Availability percentage will be calculated as:
+The application has progressed beyond the initial implementation-planning stage. However, the 99% availability target requires monitoring over an agreed period and cannot be confirmed from the presence of application code alone.
 
-Availability (%) = ((Total Measurement Time - Unplanned Downtime) / Total Measurement Time) * 100
+## 3. Test Objectives
 
-Planned maintenance and its treatment in the calculation must be agreed upon and documented before testing.
+- Evaluate whether the application remains accessible during the agreed monitoring period.
+- Record application uptime and unplanned downtime.
+- Identify application failures and service interruptions.
+- Record recovery actions and restoration time.
+- Compare measured availability against the 99% target.
 
-## Monitoring and Failure Identification
+## 4. Availability Calculation
 
-During availability testing, record:
+Availability will be calculated using:
+
+Availability (%) = ((Total Measurement Time - Unplanned Downtime) / Total Measurement Time) × 100
+
+The treatment of planned maintenance must be agreed upon and documented before measurement begins.
+
+## 5. Monitoring and Failure Identification
+
+During availability monitoring, record:
 
 - Measurement period and monitoring interval
 - Application uptime and downtime
-- Start time, end time, and duration of each outage
-- HTTP status codes, failed requests, and observed errors
+- Start time and end time of each outage
+- Duration of each outage
+- HTTP status codes and failed requests
+- Observed application errors
 - Suspected cause and impact of each failure
-- Recovery actions and time taken to restore service
+- Recovery actions and restoration time
 
-## Recovery and Restart Procedures
+## 6. Recovery and Restart Procedures
 
-Document the procedures required to:
+When an application failure occurs:
 
-1. Identify and investigate an application failure.
-2. Check application logs and relevant service health.
-3. Restart the affected application service when appropriate.
-4. Confirm that the portal responds successfully after recovery.
-5. Record the incident, recovery actions, and downtime.
+1. Identify and investigate the failure.
+2. Check application logs and service health.
+3. Inspect relevant backend and database errors.
+4. Restart the affected service when appropriate.
+5. Confirm that the application responds successfully after recovery.
+6. Record the incident, recovery actions, and downtime.
 
-These procedures must be validated once the application is implemented.
+These procedures must be validated in the configured test or deployment environment.
 
-## Acceptance Criteria
+## 7. Acceptance Criteria
 
-- Availability is at least 99% over the agreed measurement period.
-- Application failures and downtime can be identified and recorded.
+- Measured availability is at least 99% over the agreed measurement period.
+- Application downtime and failures are recorded.
 - Recovery and restart procedures are documented.
-- Availability is evaluated using recorded measurements.
-- Actual results and any failures to meet the target are documented.
+- Availability is calculated using recorded measurements.
+- Any failure to meet the target is documented with observations.
 
-## Status
+## 8. Availability Results
 
-Test plan drafted. Application monitoring, recovery validation, and availability measurements are pending application implementation and agreement on the measurement period.
+| Measurement Period | Total Time | Downtime | Availability | Result |
+|---|---|---|---|---|
+| To be recorded | - | - | - | Pending |
+
+## 9. Current Status
+
+The availability requirement, calculation method, monitoring approach, and recovery procedure have been documented.
+
+Actual availability measurements and recovery verification have not been established by this document.
+
+**Verification status:** Pending monitoring and measurement.
+
+**Target:** At least 99% availability.
