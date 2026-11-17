@@ -105,3 +105,83 @@ A **Partial** result is not a full pass. Individual verified API outcomes are li
 6. Create defect issues only for reproduced product failures. The two initial HTTP 500 responses caused by missing local `JWT_SECRET` were corrected by environment configuration and have not been classified as a product defect. Retest relevant auth/profile checks against current main `4d443c1` after updating the local checkout.
 
 This log updates the previous stale “32 blocked because main has only README” statement. It does **not** claim all 32 cases are executed or the product is ready for release.
+
+## November 16–17, 2026 — Sprint 2 QA Retest
+### Test Environment
+
+- **Execution dates:** 16–17 November 2026
+- **Tester:** Vinyas — Test Engineer
+- **Application:** Online Internship & Placement Preparation Portal
+- **Environment:** Local development environment, Windows, VS Code, PowerShell
+- **Frontend:** React/Vite at http://localhost:5173
+- **Backend:** Node.js/Express at http://localhost:4000
+- **Database:** Personal Neon PostgreSQL test database
+- **Test accounts:** Two Student accounts and one Admin account
+- **Evidence:** `QA/screenshots/` (screenshots captured during execution)
+- **Detailed reports:** `QA/TEST_REPORT.md` and `QA/BUG_REPORT.md`
+- **Scope:** Functional, validation, authorization, and API testing
+- **Limitation:** Recruiter workflows and formal non-functional tests were not fully executed.
+- **Build note:** Exact application commit at execution time was not recorded. Commit `25d6f65` is the later QA-report merge, not the tested build.
+
+### Functional Test Execution Results — November 16–17
+
+Status definitions:
+- **Pass:** All required scenarios verified.
+- **Partial:** Some scenarios verified; remaining scenarios not executed.
+- **Blocked:** Execution prevented by a missing dependency.
+- **Not Run:** Required scenarios not executed.
+
+| Test Case | Status | Actual Result / Remaining Coverage |
+|---|---|---|
+| TC-Auth-01 | Pass | Student registration and subsequent login succeeded. |
+| TC-Auth-01-N | Partial | Registration validation was exercised; complete duplicate-email coverage is not confirmed in the November evidence summary. |
+| TC-Auth-02 | Partial | Student and Admin login succeeded; Recruiter login was not tested. |
+| TC-Auth-02-N | Partial | Authentication rejection checks were performed; the full unknown-user, wrong-password and missing-field matrix is not confirmed. |
+| TC-Auth-03 | Partial | Student restrictions on Admin APIs and Admin self-role protection were verified; full Student/Recruiter/Admin permission matrix remains incomplete. |
+| TC-Profile-01 | Pass | Student profile updates and persistence were verified. |
+| TC-Profile-02 | Pass | Education add/edit/delete, skills, valid resume upload/download/delete, invalid education values, unsupported resume type and oversized file rejection were verified. |
+| TC-Intern-01 | Partial | Internship listings were visible in the Admin console; complete Student browse/detail and empty-list scenarios are not confirmed. |
+| TC-Intern-02 | Not Run | Keyword, single/combined filters, reset and no-results scenarios were not recorded. |
+| TC-Intern-03 | Partial | Admin internship activation/deactivation persisted; Recruiter owner/non-owner create/edit/close workflows were not executed. |
+| TC-App-01 | Not Run | Successful Student internship application was not recorded. |
+| TC-App-02 | Not Run | Duplicate application prevention was not recorded. |
+| TC-App-03 | Not Run | Application tracking and isolation were not recorded. |
+| TC-App-04 | Not Run | Recruiter application status updates and unauthorized attempts were not recorded. |
+| TC-Test-01 | Partial | Aptitude assessment functionality was exercised; complete available/unavailable/empty-list scenarios are not confirmed. |
+| TC-Test-02 | Partial | Assessment submission and post-submission rejection were verified; timed expiry was not confirmed. |
+| TC-Test-03 | Partial | Server-side scoring was verified against attempts with spoofed client scores; complete all-correct/all-wrong/mixed-answer matrix was not confirmed. |
+| TC-Test-04 | Partial | Results were isolated between two Student accounts; empty-history and result-detail scenarios are not fully confirmed. |
+| TC-Prep-01 | Partial | Resource availability and unavailable-state behavior were verified; full category/link coverage was not confirmed. |
+| TC-Prep-02 | Pass | Student-specific preparation progress and account isolation were verified. |
+| TC-Admin-01 | Partial | Admin user-role changes, internship availability and resource management were verified; complete non-admin equivalence checks and Recruiter-role coverage remain incomplete. |
+
+**Evidence:** See `QA/TEST_REPORT.md`, `QA/BUG_REPORT.md` and `QA/screenshots/`. The existing QA screenshots are supporting evidence; individual screenshots have not yet been indexed against every planned test case.
+
+### Security and Non-Functional Test Results — November 16–17
+
+| Test Case | Status | Actual Result / Remaining Coverage |
+|---|---|---|
+| TC-Perf-01 | Not Run | No 100-sample response-time measurement or p90 report was recorded. |
+| TC-Reliability-01 | Blocked | No approved deployed environment or 30-day availability monitoring window was available. |
+| TC-UX-01 | Not Run | No structured usability study with five representative participants was conducted. |
+| TC-Scale-01 | Blocked | No approved isolated environment or 500-concurrent-user load-test setup was available. |
+| TC-Maint-01 | Not Run | No controlled code-change and regression-review exercise was recorded. |
+| TC-Sec-01 | Partial | Student access to Admin APIs returned HTTP 403; unauthorized and missing-token requests were rejected. Complete coverage of protected profiles, applications and results remains unverified. |
+| TC-Sec-02 | Not Run | Stored password hashes were not inspected in the test database. |
+| TC-Sec-03 | Partial | Student/Admin authorization checks were performed, including rejection of unauthorized Admin operations. Full Recruiter permission coverage remains incomplete. |
+| TC-Sec-04 | Partial | Missing and invalid authentication tokens returned HTTP 401. Malformed and expired signed-token scenarios were not fully verified. |
+| TC-Sec-05 | Partial | Invalid education years, duplicate skills and unsupported/oversized resume uploads were checked. Controlled injection-testing scenarios remain unexecuted. |
+| TC-Sec-06 | Blocked | Testing used local HTTP. No deployed HTTPS/TLS endpoint was available for verification. |
+
+### November Retest Summary
+
+| Status | Functional | Security / Non-Functional | Total |
+|---|---:|---:|---:|
+| Pass | 3 | 0 | 3 |
+| Fail | 0 | 0 | 0 |
+| Partial | 12 | 4 | 16 |
+| Blocked | 0 | 3 | 3 |
+| Not Run | 6 | 4 | 10 |
+| **Total** | **21** | **11** | **32** |
+
+**Defect tracking:** No confirmed reproducible defect was established in this retest. `QA/BUG_REPORT.md` documents the potential case-sensitive skill-duplicate issue, pending clarification of expected behavior. Earlier
